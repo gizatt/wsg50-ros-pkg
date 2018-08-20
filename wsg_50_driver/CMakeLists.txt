@@ -67,6 +67,10 @@ endif()
 add_executable(wsg_50_ip src/main.cpp ${DRIVER_SOURCES})
 target_link_libraries(wsg_50_ip ${catkin_LIBRARIES})
 add_dependencies(wsg_50_ip wsg_50_common_generate_messages_cpp)
+install(TARGETS
+  wsg_50_ip
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 #add_executable(wsg_50_can src/main_can.cpp src/checksum.cpp src/msg.c src/common.cpp src/functions_can.cpp)
 #add_executable(wsg_50_can src/main_can.cpp ${DRIVER_SOURCES_CAN})
